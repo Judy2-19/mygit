@@ -994,7 +994,7 @@ function handleTouchMove(e) {
   if (turnInProgress || gameOver || showCongrats) return;
 
   const touch = e.touches[0];
-  const touchX = touch.clientX || touch.pageX;
+  const touchX = touch.x || touch.clientX || touch.pageX;
   const r = previewBall.getRadius();
   previewX = Math.max(r, Math.min(WIDTH - r, touchX));
   previewBall.setX(previewX);
@@ -1029,9 +1029,9 @@ function init() {
   initAudio();
   prepareNextPreview();
 
-  canvas.addEventListener('touchstart', handleTouchStart);
-  canvas.addEventListener('touchmove', handleTouchMove);
-  canvas.addEventListener('touchend', handleTouchEnd);
+  canvas.onTouchStart(handleTouchStart);
+  canvas.onTouchMove(handleTouchMove);
+  canvas.onTouchEnd(handleTouchEnd);
 
   gameLoop();
 }
