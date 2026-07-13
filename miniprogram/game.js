@@ -22,7 +22,7 @@ const COLORS = [
   '#FF69B4',
   '#FFA500',
   '#FFD700',
-  '#32CD32',
+  '#8B5A2B',
   '#8A2BE2',
   '#00BFFF',
   '#FFD700'
@@ -141,33 +141,39 @@ class Ball {
 
   drawCat(ctx, cx, cy, r) {
     ctx.fillStyle = '#FFFFFF';
-    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r / 4 + (r/3)/2, r / 4, r / 6, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(cx + r / 12, cy - r / 4 + (r/3)/2, r / 4, r / 6, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r + (r/3)/2, r / 4, r / 6, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx + r / 12, cy - r + (r/3)/2, r / 4, r / 6, 0, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#FF69B4';
-    ctx.beginPath(); ctx.ellipse(cx - r / 4, cy - r / 5 + (r/4)/2, r / 6, r / 8, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(cx + r / 8, cy - r / 5 + (r/4)/2, r / 6, r / 8, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx - r / 4, cy - r + (r/4)/2 + r / 6, r / 6, r / 8, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx + r / 8, cy - r + (r/4)/2 + r / 6, r / 6, r / 8, 0, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#000000';
     ctx.beginPath(); ctx.arc(cx - r / 4, cy - r / 6, r / 8, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.arc(cx + r / 8, cy - r / 6, r / 8, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#FFFFFF';
     ctx.beginPath(); ctx.arc(cx - r / 5, cy - r / 5, r / 16, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.arc(cx + r / 6, cy - r / 5, r / 16, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = '#FFB4C8';
-    ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(cx - r / 3, cy + r / 6); ctx.lineTo(cx - r / 2, cy + r / 4); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(cx + r / 3, cy + r / 6); ctx.lineTo(cx + r / 2, cy + r / 4); ctx.stroke();
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(cx - r / 4, cy - r / 8); ctx.lineTo(cx - r * 1.2, cy - r / 4); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx + r / 4, cy - r / 8); ctx.lineTo(cx + r * 1.2, cy - r / 4); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx - r / 4, cy); ctx.lineTo(cx - r * 1.2, cy); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx + r / 4, cy); ctx.lineTo(cx + r * 1.2, cy); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx - r / 4, cy + r / 8); ctx.lineTo(cx - r * 1.2, cy + r / 4); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx + r / 4, cy + r / 8); ctx.lineTo(cx + r * 1.2, cy + r / 4); ctx.stroke();
   }
 
   drawDog(ctx, cx, cy, r) {
     ctx.fillStyle = '#FFFFFF';
-    ctx.beginPath(); ctx.ellipse(cx - r / 2, cy - r / 3 + (r/2)/2, r / 4, r / 4, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(cx + r / 4, cy - r / 3 + (r/2)/2, r / 4, r / 4, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r * 0.7 + (r/2.5)/2, r / 5, r / 3, -0.2, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx + r / 6, cy - r * 0.7 + (r/2.5)/2, r / 5, r / 3, 0.2, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#D2B48C';
-    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r / 4 + (r/3)/2, r / 5, r / 6, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(cx + r / 6, cy - r / 4 + (r/3)/2, r / 5, r / 6, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r * 0.65 + (r/3.5)/2, r / 7, r / 4, -0.2, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx + r / 6, cy - r * 0.65 + (r/3.5)/2, r / 7, r / 4, 0.2, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#000000';
     ctx.beginPath(); ctx.arc(cx - r / 4, cy - r / 5, r / 8, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.arc(cx + r / 8, cy - r / 5, r / 8, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#333333';
+    ctx.beginPath(); ctx.arc(cx, cy - r / 15, r / 10, 0, Math.PI * 2); ctx.fill();
     ctx.strokeStyle = '#000000';
     ctx.lineWidth = 2;
     ctx.beginPath(); ctx.ellipse(cx, cy + r / 8, r / 4, r / 8, 0, 0, Math.PI); ctx.stroke();
@@ -175,11 +181,11 @@ class Ball {
 
   drawRabbit(ctx, cx, cy, r) {
     ctx.fillStyle = '#FFFFFF';
-    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r * 0.8 + (r/2)/2, r / 5, r / 4, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(cx + r / 6, cy - r * 0.8 + (r/2)/2, r / 5, r / 4, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r * 0.85 + (r/3)/2, r / 5, r / 3, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx + r / 6, cy - r * 0.85 + (r/3)/2, r / 5, r / 3, 0, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#FFB4C8';
-    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r * 0.7 + (r/3)/2, r / 7, r / 6, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(cx + r / 6, cy - r * 0.7 + (r/3)/2, r / 7, r / 6, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx - r / 3, cy - r * 0.75 + (r/4)/2, r / 7, r / 5, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx + r / 6, cy - r * 0.75 + (r/4)/2, r / 7, r / 5, 0, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#000000';
     ctx.beginPath(); ctx.arc(cx - r / 4, cy - r / 6, r / 8, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.arc(cx + r / 8, cy - r / 6, r / 8, 0, Math.PI * 2); ctx.fill();
@@ -189,18 +195,21 @@ class Ball {
   }
 
   drawBear(ctx, cx, cy, r) {
-    ctx.fillStyle = '#8B5A2B';
-    ctx.beginPath(); ctx.arc(cx - r / 2, cy - r / 3, r / 3, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.arc(cx + r / 6, cy - r / 3, r / 3, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = '#FFFFFF';
-    ctx.beginPath(); ctx.arc(cx - r / 3, cy - r / 6, r / 6, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.arc(cx + r / 6, cy - r / 6, r / 6, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#D2B48C';
+    ctx.beginPath(); ctx.arc(cx - r / 2, cy - r / 2, r / 3, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(cx + r / 6, cy - r / 2, r / 3, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#000000';
-    ctx.beginPath(); ctx.arc(cx - r / 4, cy - r / 5, r / 8, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.arc(cx + r / 8, cy - r / 5, r / 8, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(cx - r / 4, cy - r / 6, r / 8, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(cx + r / 8, cy - r / 6, r / 8, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#FFFFFF';
-    ctx.beginPath(); ctx.arc(cx - r / 5, cy - r / 4, r / 16, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.arc(cx + r / 6, cy - r / 4, r / 16, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(cx - r / 5, cy - r / 5, r / 16, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(cx + r / 6, cy - r / 5, r / 16, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#333333';
+    ctx.beginPath(); ctx.arc(cx, cy, r / 10, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(cx, cy + r / 15); ctx.lineTo(cx - r / 12, cy + r / 6); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx, cy + r / 15); ctx.lineTo(cx + r / 12, cy + r / 6); ctx.stroke();
   }
 
   drawDragon(ctx, cx, cy, r) {
